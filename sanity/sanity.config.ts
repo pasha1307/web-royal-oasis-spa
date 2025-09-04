@@ -16,3 +16,11 @@ export default defineConfig({
     types: schemaTypes,
   },
 })
+
+// service, contentPage, post, siteSettings, offer, testimonial
+// _type == 'post'
+// _type == 'service'
+// _type == 'contentPage'
+// _type == 'siteSettings'
+// _type == 'offer'
+// _type == 'testimonial'

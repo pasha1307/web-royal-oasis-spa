@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [{ "src": "package.json", "use": "@vercel/static-build" }],
+  "redirects": [
+    { "source": "https://sparoyaloasis.com/:path*", "destination": "https://www.sparoyaloasis.com/:path*", "permanent": true }
+  ],
+  "routes": [
+    { "src": "/sitemap.xml", "headers": { "Cache-Control": "public, max-age=300" } },
+    { "src": "/robots.txt",  "headers": { "Cache-Control": "public, max-age=300" } }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ]
+}
