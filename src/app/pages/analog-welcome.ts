@@ -46,13 +46,13 @@ import { Component } from '@angular/core';
         display: flex;
         flex-direction: column;
         text-align: center;
-        gap: 1rem;
+        gap: 0.5rem;
         align-items: center;
         max-width: 64rem;
       }
       .intro-logo {
-        height: 3rem;
-        width: 3rem;
+        height: 4rem;
+        width: 4rem;
       }
       .intro-badge {
         transition-property: color, background-color, border-color,
@@ -101,7 +101,8 @@ import { Component } from '@angular/core';
       @media (min-width: 640px) {
         .intro-description {
           line-height: 2rem;
-          font-size: 1.25rem;
+          font-size: 1.15rem;
+          margin: 1rem 0;
         }
       }
       .btn-container > * + * {
@@ -212,33 +213,27 @@ import { Component } from '@angular/core';
         <div class="intro-container">
           <img
             class="intro-logo"
-            src="https://analogjs.org/img/logos/analog-logo.svg"
-            alt="AnalogJs logo. Two red triangles and a white analog wave in front"
+            src="ros-logo.svg"
+            alt="Royal Oasis Spa."
           />
-          <a
-            class="intro-badge"
-            target="_blank"
-            href="https://twitter.com/analogjs"
-            >Follow along on Twitter</a
-          >
+
           <h1 class="intro-heading">
-            <span class="intro-analog">Analog.</span> The fullstack Angular
-            meta-framework
+            <span class="intro-analog">Royal Oasis Spa.</span>  Luxury services at affordable prices
           </h1>
           <p class="intro-description">
-            Analog is for building applications and websites with Angular.
-            <br />Powered by Vite.
+            Located in Boston area provides wide range wellness luxury services.
+            <br />Managed by Rachel.
           </p>
-          <div class="btn-container">
-            <a class="darkBtn" href="https://analogjs.org">Read the docs</a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              class="lightBtn"
-              href="https://github.com/analogjs/analog"
-              >Star on GitHub</a
-            >
-          </div>
+<!--          <div class="btn-container">-->
+<!--            <a class="darkBtn" href="https://analogjs.org">Read the docs</a>-->
+<!--            <a-->
+<!--              target="_blank"-->
+<!--              rel="noreferrer"-->
+<!--              class="lightBtn"-->
+<!--              href="https://github.com/analogjs/analog"-->
+<!--              >Star on GitHub</a-->
+<!--            >-->
+<!--          </div>-->
         </div>
       </section>
     <section id="counter-demo" class="section">

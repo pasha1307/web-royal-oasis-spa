@@ -1,8 +1,94 @@
-@import 'tailwindcss';
+/* Tailwind v4 entry */
+@import "tailwindcss";
 
-/* You can add global styles to this file, and also import other style files */
-html,
+/* ===== Brand Theme Tokens ===== */
+@theme {
+  /* Colors */
+  --color-gold: #D4AF37;      /* Royal Gold (base) */
+  --color-gold-100: #FFF8E1;  /* soft background */
+  --color-gold-300: #F1D97C;  /* subtle hover */
+  --color-gold-700: #A67C00;  /* strong hover/accent */
+  --color-gold-900: #704214;  /* deep accent */
+
+  --color-charcoal: #2C2C2C;  /* primary text */
+  --color-offwhite: #FAFAF8;  /* section backgrounds */
+  --color-softgray: #EDEDED;  /* borders, dividers */
+
+  /* Typography */
+  --font-serif: "Playfair Display", serif;
+  --font-sans: Inter, ui-sans-serif;
+
+  /* Radius & spacing (optional helpers) */
+  --radius-card: 1rem;        /* enables rounded-card */
+  --spacing-xxs: 0.25rem;     /* p-xxs / m-xxs */
+}
+
+/* ===== Base ===== */
+html { scroll-behavior: smooth; }
 body {
-  display: block;
-  height: 100%;
+  font-family: var(--font-sans);
+  color: var(--color-charcoal);
+  background: #fff;
+}
+
+/* Headings */
+h1,h2,h3,h4 { font-family: var(--font-serif); }
+
+/* Links */
+a { transition: color .2s ease, background-color .2s ease, opacity .2s ease; }
+
+/* ===== Layout helpers ===== */
+.section { /* section wrapper */
+  @apply container mx-auto px-4 py-12 md:py-16;
+}
+
+/* Cards */
+.card {
+  @apply rounded-2xl border border-softgray bg-white overflow-hidden;
+}
+.card-hover { @apply hover:shadow-lg transition; }
+
+/* ===== Buttons ===== */
+.btn {
+  @apply inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-medium transition;
+}
+.btn-primary { @apply bg-gold text-white hover:opacity-90 active:opacity-85; }
+.btn-ghost   { @apply border border-gold text-gold hover:bg-gold-100; }
+.btn-darkonimage { @apply bg-gold text-charcoal hover:opacity-90; }
+
+/* ===== Forms ===== */
+.input, .textarea, .select {
+  @apply w-full rounded-xl border border-softgray px-4 py-3 outline-none
+  focus:ring-2 focus:ring-gold bg-white;
+}
+.label { @apply block text-sm text-zinc-600 mb-1; }
+
+/* ===== Dividers & Accents ===== */
+.hr { @apply border-softgray my-8; }
+.accent-left { @apply border-l-4 border-gold pl-4; }
+
+/* ===== Hero overlay pattern ===== */
+.hero-img { @apply w-full object-cover; }
+.hero-overlay { @apply absolute inset-0 bg-black/30; }
+
+/* ===== Prose (simple) ===== */
+.prose p { @apply leading-7 text-[17px] mb-4; }
+.prose img { @apply my-6 rounded-2xl; }
+.prose a { @apply text-gold underline underline-offset-4 hover:text-gold-700; }
+
+/* ===== Navigation ===== */
+.nav-link {
+  @apply text-charcoal underline underline-offset-8 decoration-transparent hover:decoration-gold;
+}
+
+/* ===== Badges ===== */
+.badge {
+  @apply inline-block rounded-full bg-gold-100 text-gold px-3 py-1 text-xs font-medium;
+}
+
+/* ===== Focus-visible for a11y ===== */
+:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-gold) 60%, white 40%);
+  border-radius: .75rem;
 }
